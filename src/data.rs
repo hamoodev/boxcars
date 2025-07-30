@@ -12,6 +12,7 @@ pub(crate) static SPAWN_STATS: &[(&str, SpawnTrajectory)] = &[
     ("TAGame.PlayerStart_Platform_TA", SpawnTrajectory::None),
     ("TAGame.RBActor_TA", SpawnTrajectory::LocationAndRotation),
     ("TAGame.VehiclePickup_Boost_TA", SpawnTrajectory::None),
+    ("TAGame.ViralItemActor_TA", SpawnTrajectory::None),
 ];
 
 pub(crate) static ATTRIBUTES: phf::Map<&'static str, AttributeTag> = phf::phf_map! {
@@ -269,6 +270,8 @@ pub(crate) static ATTRIBUTES: phf::Map<&'static str, AttributeTag> = phf::phf_ma
     "TAGame.Stunlock_TA:StunTimeRemaining" => AttributeTag::Float,
     "TAGame.Stunlock_TA:MashTime" => AttributeTag::Float,
     "TAGame.Stunlock_TA:MaxStunTime" => AttributeTag::Float,
+    "TAGame.ViralItemActor_TA:ClientFXInfectedType" => AttributeTag::Int,
+    "TAGame.ViralItemActor_TA:InfectedStatus" => AttributeTag::Boolean,
 };
 
 pub(crate) static PARENT_CLASSES: phf::Map<&'static str, &'static str> = phf::phf_map! {
@@ -507,4 +510,6 @@ pub(crate) static PARENT_CLASSES: phf::Map<&'static str, &'static str> = phf::ph
     "TheWorld:PersistentLevel.InMapScoreboard_TA" => "TAGame.InMapScoreboard_TA",
     "TheWorld:PersistentLevel.PlayerStart_Platform_TA" => "TAGame.PlayerStart_Platform_TA",
     "TheWorld:PersistentLevel.VehiclePickup_Boost_TA" => "TAGame.VehiclePickup_Boost_TA",
+    "TAGame.Default__ViralItemActor_TA" => "TAGame.ViralItemActor_TA", 
+    "TAGame.ViralItemActor_TA" => "Engine.Actor",
 };
